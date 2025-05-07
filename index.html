@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZZ - Math Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+</head>
+<body>
+  <div class="background-elements"></div>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>QUIZZ</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Login Screen -->
+      <div id="login-screen" class="card">
+        <div class="card-header">
+          <h2>Welcome to QUIZZ!</h2>
+          <p>The fun math quiz app for kids</p>
+        </div>
+        <div class="card-content">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+          </div>
+          <p id="login-error" class="error-message"></p>
+        </div>
+        <div class="card-footer">
+          <button id="login-btn" class="btn btn-primary">Start Learning!</button>
+        </div>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dashboard" class="card" style="display: none;">
+        <div class="card-header">
+          <h2>Welcome, <span id="user-greeting">Friend</span>!</h2>
+          <p>What would you like to do today?</p>
+        </div>
+        <div class="card-content">
+          <button id="show-quiz-btn" class="btn btn-primary btn-large">Start Math Quiz</button>
+          <button id="show-ask-btn" class="btn btn-accent btn-large">Ask a Question</button>
+        </div>
+      </div>
+
+      <!-- Quiz Options -->
+      <div id="quiz-options" class="card" style="display: none;">
+        <div class="card-header">
+          <h2>Quiz Options</h2>
+          <p>Choose your quiz level and type</p>
+        </div>
+        <div class="card-content">
+          <div class="form-group">
+            <label for="level">Select Level</label>
+            <select id="level">
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5</option>
+              <option value="6">Level 6</option>
+              <option value="7">Level 7</option>
+              <option value="8">Level 8</option>
+              <option value="9">Level 9</option>
+              <option value="10">Level 10</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quiz-type">Select Quiz Type</label>
+            <select id="quiz-type">
+              <option value="addition">Addition (+)</option>
+              <option value="subtraction">Subtraction (-)</option>
+              <option value="multiplication">Multiplication (×)</option>
+              <option value="division">Division (÷)</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button id="back-to-dashboard" class="btn btn-outline">Back</button>
+          <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+        </div>
+      </div>
+
+      <!-- Quiz Container -->
+      <div id="quiz-container" class="card" style="display: none;">
+        <div class="card-header">
+          <div class="quiz-stats">
+            <div class="stat">Score: <span id="score">0</span></div>
+            <div class="stat"><span id="time-left">600</span>s</div>
+          </div>
+          <div class="progress-bar">
+            <div id="timer-progress" class="progress"></div>
+          </div>
+          <h2>Question <span id="question-count">1</span></h2>
+        </div>
+        <div class="card-content">
+          <div class="question-box">
+            <p id="current-question">5 + 3 = ?</p>
+          </div>
+          <p id="answer-feedback" class="error-message" style="text-align: center;"></p>
+          <div class="form-group">
+            <input type="number" id="user-answer" placeholder="Type your answer...">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button id="end-quiz" class="btn btn-outline">End Quiz</button>
+          <button id="submit-answer" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+      <!-- Ask Question -->
+      <div id="ask-question" class="card" style="display: none;">
+        <div class="card-header">
+          <h2>Ask a Question</h2>
+          <p>Type any math question and I'll try to answer it</p>
+        </div>
+        <div class="card-content">
+          <div class="form-group">
+            <input type="text" id="user-question" placeholder="Type a math question like '5 + 3'">
+          </div>
+          <div id="answer-box" class="answer-box" style="display: none;">
+            <p id="answer-output"></p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button id="back-from-ask" class="btn btn-outline">Back</button>
+          <button id="ask-btn" class="btn btn-accent">Ask</button>
+        </div>
+      </div>
+
+      <!-- Score Box -->
+      <div id="score-box" class="score-box" style="display: none;">
+        <h3>Your Score</h3>
+        <p><span id="final-score">0</span> / <span id="total-questions">0</span></p>
+        <button id="back-to-dashboard-from-score" class="btn btn-outline" style="margin-top: 1.5rem;">
+          Back to Dashboard
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Math Quiz App. Have fun learning!</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

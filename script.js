@@ -107,8 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    // For a children's app, we'll make login simple
-    // In a real app, you'd want proper authentication
+  
     userGreeting.textContent = username.value;
     showScreen(dashboard);
   }
